@@ -2,7 +2,7 @@ import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../home_page/home_page_widget.dart';
+import '../main.dart';
 import '../sign_up_page/sign_up_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -92,7 +92,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               fontFamily: 'Lexend Deca',
                               color: FlutterFlowTheme.tertiaryColor,
                               fontSize: 40,
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.w600,
                             ),
                           )
                         ],
@@ -125,7 +125,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   await Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => HomePageWidget(),
+                                      builder: (context) =>
+                                          NavBarPage(initialPage: 'HomePage'),
                                     ),
                                     (r) => false,
                                   );
@@ -266,7 +267,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 await Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomePageWidget(),
+                                    builder: (context) =>
+                                        NavBarPage(initialPage: 'HomePage'),
                                   ),
                                   (r) => false,
                                 );
@@ -276,7 +278,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             },
                             text: 'Login',
                             options: FFButtonOptions(
-                              width: 130,
+                              width: 120,
                               height: 40,
                               color: Color(0xFFE0EBD3),
                               textStyle: FlutterFlowTheme.subtitle1.override(
@@ -293,7 +295,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
                             child: FFButtonWidget(
                               onPressed: () {
                                 print('Button pressed ...');
@@ -320,7 +322,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(80, 40, 40, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(62, 30, 40, 0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -329,6 +331,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Lexend Deca',
                               color: FlutterFlowTheme.tertiaryColor,
+                              fontSize: 16,
                             ),
                           ),
                           FFButtonWidget(
@@ -357,7 +360,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               textStyle: FlutterFlowTheme.subtitle2.override(
                                 fontFamily: 'Lexend Deca',
                                 color: Color(0xFFE0EBD3),
-                                fontSize: 14,
+                                fontSize: 16,
                               ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,

@@ -1,5 +1,3 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -19,74 +17,59 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFF122939),
+      backgroundColor: FlutterFlowTheme.customColor1,
       body: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                  child: Text(
-                    'Hello',
-                    style: FlutterFlowTheme.title1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: FlutterFlowTheme.tertiaryColor,
-                      fontSize: 30,
-                    ),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 800,
+          decoration: BoxDecoration(
+            color: FlutterFlowTheme.customColor1,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
+                        child: Text(
+                          'Hello ',
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Lexend Deca',
+                            color: FlutterFlowTheme.tertiaryColor,
+                            fontSize: 20,
+                          ),
+                        ),
+                      )
+                    ],
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                  child: StreamBuilder<UsersRecord>(
-                    stream: UsersRecord.getDocument(currentUserReference),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50,
-                            height: 50,
-                            child: CircularProgressIndicator(
-                              color: FlutterFlowTheme.primaryColor,
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          child: Text(
+                            '',
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.tertiaryColor,
+                              fontSize: 20,
                             ),
                           ),
-                        );
-                      }
-                      final textUsersRecord = snapshot.data;
-                      return Text(
-                        '',
-                        style: FlutterFlowTheme.title1.override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.tertiaryColor,
-                          fontSize: 30,
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
-                  child: Text(
-                    ',',
-                    style: FlutterFlowTheme.title1.override(
-                      fontFamily: 'Poppins',
-                      color: FlutterFlowTheme.tertiaryColor,
+                        )
+                      ],
                     ),
-                  ),
-                )
-              ],
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [],
-              ),
-            )
-          ],
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

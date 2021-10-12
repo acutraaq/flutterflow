@@ -16,15 +16,6 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   String get password;
 
   @nullable
-  String get firstName;
-
-  @nullable
-  String get lastName;
-
-  @nullable
-  String get age;
-
-  @nullable
   String get uid;
 
   @nullable
@@ -50,16 +41,13 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   static void _initializeBuilder(UsersRecordBuilder builder) => builder
     ..email = ''
     ..password = ''
-    ..firstName = ''
-    ..lastName = ''
-    ..age = ''
     ..uid = ''
     ..displayName = ''
     ..photoUrl = ''
     ..phoneNumber = '';
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('Users');
+      FirebaseFirestore.instance.collection('users');
 
   static Stream<UsersRecord> getDocument(DocumentReference ref) => ref
       .snapshots()
@@ -78,9 +66,6 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 Map<String, dynamic> createUsersRecordData({
   String email,
   String password,
-  String firstName,
-  String lastName,
-  String age,
   String uid,
   DateTime createdTime,
   String displayName,
@@ -92,9 +77,6 @@ Map<String, dynamic> createUsersRecordData({
         UsersRecord((u) => u
           ..email = email
           ..password = password
-          ..firstName = firstName
-          ..lastName = lastName
-          ..age = age
           ..uid = uid
           ..createdTime = createdTime
           ..displayName = displayName

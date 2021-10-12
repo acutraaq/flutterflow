@@ -54,7 +54,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                     style: FlutterFlowTheme.title1.override(
                       fontFamily: 'Lexend Deca',
                       color: FlutterFlowTheme.tertiaryColor,
-                      fontSize: 35,
+                      fontSize: 36,
                     ),
                   ),
                 )
@@ -355,6 +355,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                           'Already have an account?',
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Lexend Deca',
+                            fontSize: 16,
                           ),
                         ),
                         FFButtonWidget(
@@ -382,7 +383,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                             textStyle: FlutterFlowTheme.subtitle2.override(
                               fontFamily: 'Lexend Deca',
                               color: Color(0xFF122939),
-                              fontSize: 14,
+                              fontSize: 16,
                             ),
                             borderSide: BorderSide(
                               color: Colors.transparent,
